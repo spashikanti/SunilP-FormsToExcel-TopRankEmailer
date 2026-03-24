@@ -95,5 +95,3 @@ function main(workbook: ExcelScript.Workbook) {
     status
   };
 }
- * -----------------------------------
- * This script:
