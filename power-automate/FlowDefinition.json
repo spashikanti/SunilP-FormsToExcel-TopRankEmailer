@@ -1,0 +1,148 @@
+{
+  "definition": {
+    "$schema": "https://schema.management.azure.com/providers/MicrosoftLogic/schemas/2019-05-01/workflowdefinition.json#",
+    "actions": {
+      "Add_a_row_into_a_table": {
+        "type": "ApiConnection",
+        "inputs": {
+          "host": {
+            "connectionName": "excelonlinebusiness",
+            "operationId": "AddRowToTable",
+            "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+          },
+          "parameters": {
+            "location": "<REPLACE_WITH_LOCATION>",
+            "documentLibrary": "<REPLACE_IF_SHAREPOINT>",
+            "file": "<REPLACE_WITH_FILE_ID>",
+            "table": "Ratings",
+            "worksheet": "RatingsData",
+            "row": {
+              "ParticipantEmail": "@{triggerOutputs()?['body/responder']}",
+              "Instructor": "@{outputs('Get_response_details')?['body/Instructor']}",
+              "Score": "@{outputs('Get_response_details')?['body/Score']}",
+              "Timestamp": "@{utcNow()}"
+            }
+          }
+        },
+        "runAfter": {
+          "Get_response_details": ["Succeeded"]
+        }
+      },
+
+      "Run_Office_Script": {
+        "type": "ApiConnection",
+        "inputs": {
+          "host": {
+            "connectionName": "excelonlinebusiness",
+            "operationId": "RunScript",
+            "apiId": "/providers/Microsoft.PowerApps/apis/shared_excelonlinebusiness"
+          },
+          "parameters": {
+            "scriptId": "<REPLACE_WITH_SCRIPT_ID>",
+            "location": "<REPLACE_WITH_LOCATION>",
+            "file": "<REPLACE_WITH_FILE_ID>",
+            "worksheet": "RatingsData"
+          }
+        },
+        "runAfter": {
+          "Add_a_row_into_a_table": ["Succeeded"]
+        }
+      },
+
+      "Check_Status": {
+        "type": "If",
+        "expression": {
+          "equals": [
+            "@{outputs('Run_Office_Script')?['body/status']}",
+            "Complete"
+          ]
+        },
+        "actions": {
+          "Send_email_Complete": {
+            "type": "ApiConnection",
+            "inputs": {
+              "host": {
+                "connectionName": "office365",
+                "operationId": "SendEmailV2",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+              },
+              "parameters": {
+                "to": "@{outputs('Run_Office_Script')?['body/topInstructor']}",
+                "subject": "You are the Highest Ranked Instructor!",
+                "body": "Congratulations!<br><br>Based on all submissions, you received the highest rating.<br><br>Score: @{outputs('Run_Office_Script')?['body/topScore']}"
+              }
+            }
+          }
+        },
+        "runAfter": {
+          "Run_Office_Script": ["Succeeded"]
+        }
+      },
+
+      "DeadlineReachedCheck": {
+        "type": "If",
+        "expression": {
+          "equals": [
+            "@{outputs('Run_Office_Script')?['body/status']}",
+            "DeadlineReached"
+          ]
+        },
+        "actions": {
+          "Send_email_DeadlineReached": {
+            "type": "ApiConnection",
+            "inputs": {
+              "host": {
+                "connectionName": "office365",
+                "operationId": "SendEmailV2",
+                "apiId": "/providers/Microsoft.PowerApps/apis/shared_office365"
+              },
+              "parameters": {
+                "to": "@{outputs('Run_Office_Script')?['body/topInstructor']}",
+                "subject": "Evaluation Deadline Reached — Highest Ranked Instructor",
+                "body": "The evaluation deadline has passed.<br><br>Top instructor based on current submissions:<br><br>Instructor: @{outputs('Run_Office_Script')?['body/topInstructor']}<br>Score: @{outputs('Run_Office_Script')?['body/topScore']}"
+              }
+            }
+          }
+        },
+        "runAfter": {
+          "Check_Status": ["Succeeded"]
+        }
+      }
+    },
+
+    "triggers": {
+      "When_a_new_response_is_submitted": {
+        "type": "ApiConnection",
+        "inputs": {
+          "host": {
+            "connectionName": "microsoftforms",
+            "operationId": "WhenANewResponseIsSubmitted",
+            "apiId": "/providers/Microsoft.PowerApps/apis/shared_microsoftforms"
+          },
+          "parameters": {
+            "formId": "<REPLACE_WITH_FORM_ID>"
+          }
+        }
+      },
+      "Get_response_details": {
+        "type": "ApiConnection",
+        "inputs": {
+          "host": {
+            "connectionName": "microsoftforms",
+            "operationId": "GetResponseDetails",
+            "apiId": "/providers/Microsoft.PowerApps/apis/shared_microsoftforms"
+          },
+          "parameters": {
+            "formId": "<REPLACE_WITH_FORM_ID>",
+            "responseId": "@{triggerOutputs()?['body/responseId']}"
+          }
+        },
+        "runAfter": {
+          "When_a_new_response_is_submitted": ["Succeeded"]
+        }
+      }
+    }
+  },
+  "kind": "Stateful"
+}
+``
