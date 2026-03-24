@@ -7,6 +7,18 @@ Automated workflow for collecting evaluation responses, calculating the highest�
 This project integrates **Microsoft Forms → Excel → Office Scripts → Power Automate** to create a reliable, enterprise‑ready evaluation automation solution.
 
 ---
+## ⬇️ Download
+
+**Get the latest solution package (ZIP) from GitHub Releases:**
+
+👉 [📦 Download Latest Release](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+![Power Platform](https://img.shields.io/badge/Platform-Power%20Platform-blue)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/spashikanti/SunilP-FormsToExcel-TopRankEmailer?logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
+[![Downloads](https://img.shields.io/github/downloads/spashikanti/SunilP-FormsToExcel-TopRankEmailer/total?logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases)
+
+---
 
 # 📘 Features
 
@@ -109,7 +121,7 @@ JSON Export located under:
 
 # 🖼 Flow Diagram
 
-See `/media/flow-diagram.png`.
+![Flow Diagram](./media/Forms_To_Excel_TopRankEmailer_Architecture.png)
 
 ---
 
@@ -165,11 +177,13 @@ Flow status = **InProgress**
 
 ---
 
-# 📜 License
-MIT License.
+## 🤝 Community & Contribution
+As a **Power Platform Super User**, I built this to solve the deployment bottlenecks of heavy UI kits identified in the community forums. If you have ideas for new patterns (e.g., "wave" vs "pulse"), feel free to open a Pull Request!
 
 ---
 
 # 🙌 Author
 **Sunil Pashikanti**  
 Community Contributor — Power Automate / Excel / Office Scripts
+
+**Created by [Sunil Kumar Pashikanti](https://sunilpashikanti.com)** *Principal Architect | Power Platform Super User* **Blog:** [sunilpashikanti.blogspot.com](http://sunilpashikanti.blogspot.com)
