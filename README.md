@@ -17,7 +17,7 @@ This project integrates **Microsoft Forms → Excel → Office Scripts → Power
 ![Power Platform](https://img.shields.io/badge/Platform-Power%20Platform-blue)
 ![Power Automate](https://img.shields.io/badge/Type-Power%20Automate-blue)
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/spashikanti/SunilP-FormsToExcel-TopRankEmailer?logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/spashikanti/SunilP-FormsToExcel-TopRankEmailer/total?logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases)
+[![Downloads](https://img.shields.io/github/downloads/spashikanti/SunilP-FormsToExcel-TopRankEmailer/total?logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
 
 ---
 
