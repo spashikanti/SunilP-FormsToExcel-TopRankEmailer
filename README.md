@@ -1,23 +1,29 @@
 # SunilP-FormsToExcel-TopRankEmailer
-Automated workflow for collecting evaluation responses, calculating the highest‑ranked instructor, and sending a notification email after:
+Automated workflow for collecting evaluation responses, calculating the highest‑ranked instructor, and sending notifications.
+
+![Microsoft Community](https://img.shields.io/badge/Microsoft%20Community-Super%20User-orange?style=for-the-badge&logo=microsoft)
+![License](https://img.shields.io/badge/License-MIT-yellow?style=for-the-badge)
+![Power Automate](https://img.shields.io/badge/Platform-Power%20Automate-blue?style=for-the-badge&logo=power-automate)
+[![Release](https://img.shields.io/github/v/release/spashikanti/SunilP-FormsToExcel-TopRankEmailer?style=for-the-badge&logo=github&color=brightgreen)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
+
+---
+
+### 💡 The Solution
+This project creates a reliable, enterprise‑ready evaluation automation solution by integrating:
+**Microsoft Forms** → **Excel** → **Office Scripts** → **Power Automate**
 
 ✔ All submissions are received **before the deadline**, OR  
 ✔ The deadline has arrived (even if responses are incomplete).
 
-This project integrates **Microsoft Forms → Excel → Office Scripts → Power Automate** to create a reliable, enterprise‑ready evaluation automation solution.
-
 ---
-## ⬇️ Download
 
-**Get the latest solution package (ZIP) from GitHub Releases:**
+## ⬇️ Get Started
 
-👉 [📦 Download Latest Release](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
+**Download the latest Power Platform solution package (ZIP) to import into your environment:**
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-![Power Platform](https://img.shields.io/badge/Platform-Power%20Platform-blue)
-![Power Automate](https://img.shields.io/badge/Type-Power%20Automate-blue)
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/spashikanti/SunilP-FormsToExcel-TopRankEmailer?logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
-[![Downloads](https://img.shields.io/github/downloads/spashikanti/SunilP-FormsToExcel-TopRankEmailer/total?logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
+[![Download ZIP](https://img.shields.io/badge/Download-Latest%20Release-brightgreen?style=for-the-badge&logo=github)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
+[![Latest Version](https://img.shields.io/github/v/release/spashikanti/SunilP-FormsToExcel-TopRankEmailer?style=for-the-badge&color=blue)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
+[![Total Downloads](https://img.shields.io/github/downloads/spashikanti/SunilP-FormsToExcel-TopRankEmailer/total?style=for-the-badge&color=orange)](https://github.com/spashikanti/SunilP-FormsToExcel-TopRankEmailer/releases/latest)
 
 ---
 
@@ -279,8 +285,18 @@ Open an Issue or submit a Pull Request to enhance the project.
 
 # 🙌 Author
 
-**Sunil Kumar Pashikanti**  
-Principal Architect | Power Platform Contributor  
-🌐 https://sunilpashikanti.com  
-📝 Blog: http://sunilpashikanti.blogspot.com
+<table style="border: none;">
+  <tr>
+    <td style="border: none;">
+      <strong>Sunil Kumar Pashikanti</strong><br>
+      <em>Principal Architect | Microsoft Power Platform Super User</em><br><br>
+      <a href="https://community.powerplatform.com/profile/?userid=8077d18b-7b47-ee11-be6d-6045bdebe084"><img src="https://img.shields.io/badge/Community-View%20My%20Profile-blue?logo=microsoft&style=flat-square" alt="Power Users Profile"></a>
+      <a href="https://sunilpashikanti.com"><img src="https://img.shields.io/badge/Website-sunilpashikanti.com-orange?logo=google-chrome&style=flat-square" alt="Website"></a>
+      <a href="https://sunilpashikanti.blogspot.com/"><img src="https://img.shields.io/badge/Blog-sunilpashikanti.blogspot.com-brightgreen?logo=blogger&style=flat-square" alt="Website"></a>
+      <a href="https://www.linkedin.com/in/sunil-kumar-pashikanti/"><img src="https://img.shields.io/badge/LinkedIn-Connect-blue?logo=linkedin&style=flat-square" alt="LinkedIn"></a>
+    </td>
+  </tr>
+</table>
+
+**Support the Project:** If this solution helped you, please consider giving it a ⭐ to help others find it!
 
